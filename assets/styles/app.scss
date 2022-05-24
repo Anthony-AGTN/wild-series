@@ -1,10 +1,14 @@
 // assets/styles/app.scss
 
 // customize some Bootstrap variables
-// $primary: #0D6EFD;
+$primary: #0D6EFD;
 
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
+
+$color-secondary: #031633;
+$color-grey: #CED4DA;
+$color-white: #ffffff;
 
 .navitemsright {
     flex-grow: 0;
