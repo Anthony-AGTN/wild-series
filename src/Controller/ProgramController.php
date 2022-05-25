@@ -21,7 +21,7 @@ class ProgramController extends AbstractController
     public function show($id): Response
     {
         return $this->render('program/show.html.twig', [
-            'website' => 'Wild Series With ID',
+            'website' => 'Wild Series with ID',
             'id' => $id,
         ]);
     }
