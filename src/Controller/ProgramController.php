@@ -17,16 +17,24 @@ class ProgramController extends AbstractController
 
 
         return $this->render('program/index.html.twig', [
-            'website' => 'Wild Series',
             'programs' => $programs,
         ]);
     }
 
-    #[Route('/{id}', name: 'show', methods: ['GET'], requirements: ['id'=>'\d+'])]
-    public function show($id): Response
+    #[Route('/show/{id}', name: 'show', methods: ['GET'], requirements: ['id'=>'\d+'])]
+    public function show(int $id, ProgramRepository $programRepository): Response
     {
+        $program = $programRepository->findOneBy(['id' => $id]);
+
+        if (!$program) {
+            throw $this->createNotFoundException(
+                'No program with id : '.$id.' found in program\'s table.'
+            );
+        }
+
         return $this->render('program/show.html.twig', [
             'id' => $id,
+            'program' => $program,
         ]);
     }
 }
