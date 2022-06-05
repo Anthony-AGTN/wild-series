@@ -4,18 +4,37 @@
 {% endblock %}
 
 {% block body %}
-    <div class="media">
-        <div class="media-body">
-            <h1 class="mt-0">{{ category.name }}</h1>
-        </div>
-    </div>
-    {% for program in programs %}
-        <pre>
-            {{ dump(program) }}
-        </pre>
-    {% endfor %}
-
-    <a href="{{ path('category_index') }}">
-        Retour à la liste des catégories
-    </a>
+	<div class="container">
+		<div class="media">
+			<div class="media-body">
+				<h1 class="mt-5">Catégorie :
+					{{ category.name }}</h1>
+			</div>
+		</div>
+		{% if programs %}
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Titre</th>
+						<th scope="col">Résumé</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for program in programs %}
+						<tr>
+							<th scope="row">{{ program.id }}</th>
+							<td>{{ program.title }}</td>
+							<td>{{ program.synopsis }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		{% else %}
+			<p>Aucune série trouvée pour cette catégorie.</p>
+		{% endif %}
+		<a href="{{ path('category_index') }}">
+			Retour à la liste des catégories
+		</a>
+	</div>
 {% endblock %}

@@ -19,6 +19,7 @@ class CategoryFixtures extends Fixture
         'Science-fiction',
         'Comédie',
         'Documentaire',
+        'Film d\'auteur',
     ];
 
     public function load(ObjectManager $manager)
