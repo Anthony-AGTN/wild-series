@@ -24,7 +24,7 @@
 					{% for program in programs %}
 						<tr>
 							<th scope="row">{{ program.id }}</th>
-							<td>{{ program.title }}</td>
+							<td><a href="{{ path("program_show", { id: program.id }) }}">{{ program.title }}</a></td>
 							<td>{{ program.synopsis }}</td>
 						</tr>
 					{% endfor %}
