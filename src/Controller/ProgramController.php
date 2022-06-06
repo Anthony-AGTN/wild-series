@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\ProgramRepository;
+use App\Repository\SeasonRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -21,7 +22,7 @@ class ProgramController extends AbstractController
         ]);
     }
 
-    #[Route('/show/{id}', name: 'show', methods: ['GET'], requirements: ['id'=>'\d+'])]
+    #[Route('/{id}', name: 'show', methods: ['GET'], requirements: ['id'=>'\d+'])]
     public function show(int $id, ProgramRepository $programRepository): Response
     {
         $program = $programRepository->findOneBy(['id' => $id]);
@@ -38,6 +39,26 @@ class ProgramController extends AbstractController
             'id' => $id,
             'program' => $program,
             'seasons' => $seasons,
+        ]);
+    }
+
+    #[Route('/{programId}/seasons/{seasonId}', name: 'season_show', methods: ['GET'], requirements: ['programId'=>'\d+', 'seasonId'=>'\d+'])]
+    public function showSeason(int $programId, int $seasonId, ProgramRepository $programRepository, SeasonRepository $seasonRepository): Response
+    {
+        $program = $programRepository->findOneBy(['id' => $programId]);
+        $season = $seasonRepository->findOneBy(['id' => $seasonId]);
+
+        if (!$program) {
+            throw $this->createNotFoundException(
+                'No program with id : '.$programId.' found in program\'s table.'
+            );
+        }
+
+        $seasons = $program->getSeasons();
+
+        return $this->render('program/season_show.html.twig', [
+            'program' => $program,
+            'season' => $season,
         ]);
     }
 }
