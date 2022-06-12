@@ -18,6 +18,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://fr.web.img6.acsta.net/pictures/21/11/02/11/12/2878509.jpg');
         $program->setCategory($this->getReference('category_Animation'));
         $manager->persist($program);
+        $this->addReference('program_1', $program);
         
         $program = new Program;
         $program->setTitle('Heartstopper');
@@ -25,6 +26,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://c0.lestechnophiles.com/www.numerama.com/wp-content/uploads/2022/05/heartstoppernetflix-1650895928402.jpg?resize=1024,576');
         $program->setCategory($this->getReference('category_Romance'));
         $manager->persist($program);
+        $this->addReference('program_2', $program);
 
         $program = new Program;
         $program->setTitle('Squid Game');
@@ -32,6 +34,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://fr.web.img5.acsta.net/c_310_420/pictures/21/09/14/10/18/1090569.jpg');
         $program->setCategory($this->getReference('category_Horreur'));
         $manager->persist($program);
+        $this->addReference('program_3', $program);
 
         $program = new Program;
         $program->setTitle('Loki');
@@ -39,6 +42,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://img.phonandroid.com/2021/07/loki-saison-deux.jpg');
         $program->setCategory($this->getReference('category_Drame'));
         $manager->persist($program);
+        $this->addReference('program_4', $program);
 
         $program = new Program;
         $program->setTitle('Obi-Wan Kenobi');
@@ -46,6 +50,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://www.melty.fr/wp-content/uploads/meltyfr/2022/05/obi.jpg');
         $program->setCategory($this->getReference('category_Science-fiction'));
         $manager->persist($program);
+        $this->addReference('program_5', $program);
 
         $program = new Program;
         $program->setTitle('WandaVision');
@@ -53,6 +58,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/5A6949E15616A514884473E12153B1BDD4F595B97D2DEFD0F81C8CF805692D04/scale?width=1200&aspectRatio=1.78&format=jpeg');
         $program->setCategory($this->getReference('category_Fantastique'));
         $manager->persist($program);
+        $this->addReference('program_6', $program);
 
         $program = new Program;
         $program->setTitle('Lupin');
@@ -60,6 +66,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://fr.web.img6.acsta.net/pictures/20/12/02/16/24/1535547.jpg');
         $program->setCategory($this->getReference('category_Action'));
         $manager->persist($program);
+        $this->addReference('program_7', $program);
 
         $program = new Program;
         $program->setTitle('Moon Knight');
@@ -67,6 +74,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2022/03/moon%20knight%20critique%20big.jpg');
         $program->setCategory($this->getReference('category_Fantastique'));
         $manager->persist($program);
+        $this->addReference('program_8', $program);
 
         $program = new Program;
         $program->setTitle('Halo');
@@ -74,6 +82,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://www.francetvinfo.fr/pictures/4yM5Jwj84FTvHpcgzR9Epmwtq80/1200x1200/2022/04/05/phpjAIaW5.jpg');
         $program->setCategory($this->getReference('category_Action'));
         $manager->persist($program);
+        $this->addReference('program_9', $program);
 
         $program = new Program;
         $program->setTitle('Spy x Family');
@@ -81,6 +90,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://kbimages1-a.akamaihd.net/1f83f028-98cd-419e-a278-1358db5bef32/1200/1200/False/spy-x-family-vol-2.jpg');
         $program->setCategory($this->getReference('category_Action'));
         $manager->persist($program);
+        $this->addReference('program_10', $program);
 
         $program = new Program;
         $program->setTitle('Snowdrop');
@@ -88,6 +98,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/1F8BA77CA0BFA2D189B1C4E41A6BC9E19D0A4B5D56B46F71E2FA6CA3AEBEEB5C/scale?width=1200&aspectRatio=1.78&format=jpeg');
         $program->setCategory($this->getReference('category_Action'));
         $manager->persist($program);
+        $this->addReference('program_11', $program);
 
         $program = new Program;
         $program->setTitle('Drôle');
@@ -95,6 +106,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://kifim.b-cdn.net/series/medium/1895000.webp');
         $program->setCategory($this->getReference('category_Comédie'));
         $manager->persist($program);
+        $this->addReference('program_12', $program);
 
         $program = new Program;
         $program->setTitle('Tokyo Revengers');
@@ -102,6 +114,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://img1.ak.crunchyroll.com/i/spire4/81ba04142373eed44f7e0c2f278b17361626143500_full.jpg');
         $program->setCategory($this->getReference('category_Animation'));
         $manager->persist($program);
+        $this->addReference('program_13', $program);
 
         $program = new Program;
         $program->setTitle('iCarly');
@@ -109,6 +122,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://img.betaseries.com/h9LM2L_doiXn9RWIznShLwLAQb0=/600x900/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffonds%2Fposter%2F64368dfc1699a3b03f2fbc8df437d1b6.jpg');
         $program->setCategory($this->getReference('category_Comédie'));
         $manager->persist($program);
+        $this->addReference('program_14', $program);
 
         $program = new Program;
         $program->setTitle('Severance');
@@ -116,6 +130,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://fr.web.img4.acsta.net/pictures/21/12/16/17/19/2294099.jpg');
         $program->setCategory($this->getReference('category_Drame'));
         $manager->persist($program);
+        $this->addReference('program_15', $program);
 
         $program = new Program;
         $program->setTitle('The Croods: Family Tree');
@@ -123,6 +138,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://fr.web.img4.acsta.net/pictures/21/09/14/16/20/1364695.jpg');
         $program->setCategory($this->getReference('category_Aventure'));
         $manager->persist($program);
+        $this->addReference('program_16', $program);
 
         $program = new Program;
         $program->setTitle('Vikings : Valhalla');
@@ -130,6 +146,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://fr.web.img2.acsta.net/pictures/22/02/09/11/13/1880062.jpg');
         $program->setCategory($this->getReference('category_Action'));
         $manager->persist($program);
+        $this->addReference('program_17', $program);
 
         $program = new Program;
         $program->setTitle('KinnPorsche');
@@ -137,6 +154,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://img.betaseries.com/EW4hIy79368pOycw2GlSSw9qVhI=/600x900/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffonds%2Fposter%2Fd0652ca9d73f65a3b8235cd49adb8765.jpg');
         $program->setCategory($this->getReference('category_Romance'));
         $manager->persist($program);
+        $this->addReference('program_18', $program);
 
         $program = new Program;
         $program->setTitle('Hawkeye');
@@ -144,6 +162,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://sm.ign.com/ign_fr/gallery/h/hawkeye-pr/hawkeye-premiere-all-the-easter-eggs-from-the-first-two-epis_s3t5.jpg');
         $program->setCategory($this->getReference('category_Aventure'));
         $manager->persist($program);
+        $this->addReference('program_19', $program);
 
         $program = new Program;
         $program->setTitle('Business Proposal');
@@ -151,6 +170,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://www.nautiljon.com/images/drama/00/75/a_business_proposal_6657.jpg');
         $program->setCategory($this->getReference('category_Comédie'));
         $manager->persist($program);
+        $this->addReference('program_20', $program);
 
         $program = new Program;
         $program->setTitle('Orelsan: Montre jamais ça à personne');
@@ -158,6 +178,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setPoster('https://www.letelegramme.fr/images/2022/04/13/montre-jamais-ca-a-personne-le-documentaire-sur-orelsan-aura_6361843.jpg');
         $program->setCategory($this->getReference('category_Documentaire'));
         $manager->persist($program);
+        $this->addReference('program_21', $program);
 
         $manager->flush();
     }
