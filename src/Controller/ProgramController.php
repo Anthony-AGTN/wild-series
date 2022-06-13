@@ -2,6 +2,7 @@
 // src/Controller/ProgramController.php
 namespace App\Controller;
 
+use App\Entity\Episode;
 use App\Entity\Program;
 use App\Entity\Season;
 use App\Repository\ProgramRepository;
@@ -41,7 +42,7 @@ class ProgramController extends AbstractController
         ]);
     }
 
-    #[Route('/{program}/seasons/{season}', name: 'season_show', methods: ['GET'], requirements: ['programId'=>'\d+', 'seasonId'=>'\d+'])]
+    #[Route('/{program}/seasons/{season}', name: 'season_show', methods: ['GET'], requirements: ['program'=>'\d+', 'season'=>'\d+'])]
     public function showSeason(Program $program, Season $season): Response
     {
 
@@ -57,6 +58,17 @@ class ProgramController extends AbstractController
             'program' => $program,
             'season' => $season,
             'episodes' => $episodes,
+        ]);
+    }
+
+    #[Route('/{program}/seasons/{season}/episode/{episode}', name: 'episode_show', methods: ['GET'], requirements: ['program'=>'\d+', 'season'=>'\d+', 'episode'=>'\d+'])]
+    public function showEpisode(Program $program, Season $season, Episode $episode): Response
+    {
+
+        return $this->render('program/episode_show.html.twig', [
+            'program' => $program,
+            'season' => $season,
+            'episode' => $episode,
         ]);
     }
 }
