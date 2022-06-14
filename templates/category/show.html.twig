@@ -4,35 +4,60 @@
 {% endblock %}
 
 {% block body %}
-		<div class="media">
-			<div class="media-body">
-				<h1 class="mt-5">Catégorie :
+
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-9">
+				<h1>Catégorie :
 					{{ category.name }}</h1>
+				{% if programs %}
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th scope="col">ID</th>
+								<th scope="col">Titre</th>
+								<th scope="col">Résumé</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for program in programs %}
+								<tr>
+									<th scope="row">{{ program.id }}</th>
+									<td>
+										<a href="{{ path("program_show", { id: program.id }) }}">{{ program.title }}</a>
+									</td>
+									<td>{{ program.synopsis }}</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				{% else %}
+					<p>Aucune série trouvée pour cette catégorie.</p>
+				{% endif %}
 			</div>
 		</div>
-		{% if programs %}
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th scope="col">ID</th>
-						<th scope="col">Titre</th>
-						<th scope="col">Résumé</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for program in programs %}
-						<tr>
-							<th scope="row">{{ program.id }}</th>
-							<td><a href="{{ path("program_show", { id: program.id }) }}">{{ program.title }}</a></td>
-							<td>{{ program.synopsis }}</td>
-						</tr>
-					{% endfor %}
-				</tbody>
-			</table>
-		{% else %}
-			<p>Aucune série trouvée pour cette catégorie.</p>
-		{% endif %}
-		<a href="{{ path('category_index') }}">
-			Retour à la liste des catégories
-		</a>
+	</div>
+
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-9">
+				<p>
+					<a href="{{ path('app_index') }}">
+						Retour à l'accueil
+					</a>
+				</p>
+				<p>
+					<a href="{{ path('category_index') }}">
+						Liste des catégories
+					</a>
+				</p>
+				<p>
+					<a href="{{ path('program_index') }}">
+						Liste des programmes
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
 {% endblock %}
