@@ -4,6 +4,7 @@
 {% endblock %}
 
 {% block body %}
+
 	<div class="container my-5">
 		<div class="row justify-content-center">
 			<div class="col-lg-7">
@@ -30,6 +31,11 @@
 		<div class="row justify-content-center">
 			<div class="col-lg-9">
 				<p>
+					<a href="{{ path('category_new') }}">
+						Ajouter une catégorie
+					</a>
+				</p>
+				<p>
 					<a href="{{ path('app_index') }}">
 						Retour à l'accueil
 					</a>
@@ -42,4 +48,5 @@
 			</div>
 		</div>
 	</div>
+	
 {% endblock %}
