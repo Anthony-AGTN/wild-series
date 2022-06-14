@@ -4,29 +4,56 @@
 {% endblock %}
 
 {% block body %}
-	<div class="media">
-		<img class="rounded mx-auto my-5 d-block poster-size" src="{{program.poster}}" alt="{{ program.title }} poster">
-		<div class="media-body">
-			<h1 class="mt-0">{{ program.title }}</h1>
-			<p>{{ program.synopsis }}</p>
-			<p>Catégorie :
-				{{ program.category.name }}</p>
-			<p>Les saisons :</p>
-			<ul>
-			{% for season in seasons %}
-				<li><a href="{{ path("program_season_show", { program: program.id, season: season.id }) }}">{{ season.description }}</a></li>
-			{% endfor %}
-			</ul>
+
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-7">
+				<div class="card">
+					<img src="{{program.poster}}" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">{{ program.title }}</h5>
+						<p class="card-text">{{ program.synopsis }}</p>
+						<p class="card-text">
+							<small class="text-muted">Catégorie :
+								<a href="{{ path("category_show", { categoryName: program.category.name }) }}">{{ program.category.name }}</a>
+							</small>
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-	<p>
-		<a href="{{ path('program_index') }}">
-			Retour à la liste des programmes
-		</a>
-	</p>
-	<p>
-		<a href="{{ path('category_index') }}">
-			Retour à la liste des catégories
-		</a>
-	</p>
+
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-9">
+				<h5>Les saisons :</h5>
+				<ol class="list-group">
+					{% for season in seasons %}
+						<li class="list-group-item">
+							<a href="{{ path("program_season_show", { program: program.id, season: season.id }) }}">{{ season.description }}</a>
+						</li>
+					{% endfor %}
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-9">
+				<p>
+					<a href="{{ path('program_index') }}">
+						Retour à la liste des programmes
+					</a>
+				</p>
+				<p>
+					<a href="{{ path('category_index') }}">
+						Retour à la liste des catégories
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
 {% endblock %}
