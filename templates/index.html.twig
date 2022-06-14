@@ -4,6 +4,63 @@
 {% endblock %}
 
 {% block body %}
-	<h1>{{ website }}</h1>
-	<p class="text-pink-500">Viva PHP</p>
+
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-9">
+				<h1>{{ website }}</h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-9">
+				<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+					<div class="carousel-indicators">
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+					</div>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="https://img.freepik.com/vecteurs-libre/fond-jungle-plat-organique_23-2148957621.jpg?w=2000" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="https://img.freepik.com/vecteurs-libre/fond-jungle-detaille_23-2148949774.jpg?w=2000" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="https://img.freepik.com/vecteurs-libre/fond-jungle-dessin-anime_23-2148950065.jpg?w=2000" class="d-block w-100" alt="...">
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-9">
+				<p>
+					<a href="{{ path('program_index') }}">
+						Liste des programmes
+					</a>
+				</p>
+				<p>
+					<a href="{{ path('category_index') }}">
+						Liste des catégories
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
 {% endblock %}
