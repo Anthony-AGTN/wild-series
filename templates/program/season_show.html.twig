@@ -4,27 +4,42 @@
 {% endblock %}
 
 {% block body %}
-	<div class="media">
-		<div class="media-body">
-			<h1 class="mt-5">{{ program.title }}
-				- Saison
-				{{ season.number }}</h1>
-			<p>{{ program.synopsis }}</p>
-			<ul>
-			{% for episode in episodes %}
-				<li><a href="{{ path("program_episode_show", { program: program.id, season: season.id, episode: episode.id }) }}">{{ episode.number }} : {{ episode.title }}</a></li>
-			{% endfor %}
-			</ul>
-			<p>
-				<a href="{{ path('program_index') }}">
-					Retour à la liste des programmes
-				</a>
-			</p>
-			<p>
-				<a href="{{ path('category_index') }}">
-					Retour à la liste des catégories
-				</a>
-			</p>
+
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-9">
+				<h1>{{ program.title }}</h1>
+				<ol class="list-group">
+					<li class="list-group-item">
+						<h2>Saison
+							{{ season.number }}</h2>
+						<p>{{ program.synopsis }}</p>
+					</li>
+				</ol>
+			</div>
 		</div>
 	</div>
+
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-9">
+				<p>
+					<a href="{{ path('app_index') }}">
+						Retour à l'accueil
+					</a>
+				</p>
+				<p>
+					<a href="{{ path('program_index') }}">
+						Liste des programmes
+					</a>
+				</p>
+				<p>
+					<a href="{{ path('category_index') }}">
+						Liste des catégories
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
 {% endblock %}
