@@ -33,6 +33,8 @@
 						<li class="list-group-item">
 							<a href="{{ path("program_season_show", { program: program.id, season: season.id }) }}">{{ season.description }}</a>
 						</li>
+					{% else %}
+						Aucune saison trouvée.
 					{% endfor %}
 				</ol>
 			</div>

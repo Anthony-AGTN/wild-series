@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wild Series
+{% endblock %}
+
+{% block body %}
+
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-9">
+				<h1>Ajouter une nouvelle série</h1>
+				<div>
+					{{ form_start(form) }}
+					{{ form_widget(form) }}
+					<button type="submit" class="btn btn-primary">Valider</button>
+					{{ form_end(form) }}
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
