@@ -4,21 +4,42 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="mt-5">Toutes les catégories de la table category :
-	</h1>
-	{% for category in categories %}
-		<div>
-			<h2 class="mt-4">{{ loop.index }}
-				/
-				{{ category.name }}</h2>
-			<a href="{{ path("category_show", { categoryName: category.name }) }}">Voir la fiche</a>
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-7">
+				<h1>Toutes les catégories :</h1>
+				<ol class="list-group">
+					{% for category in categories %}
+						<li class="list-group-item">
+							<h2 class="mt-4">{{ loop.index }}
+								/
+								{{ category.name }}</h2>
+							<p class="text-end">
+								<a href="{{ path("category_show", { categoryName: category.name }) }}">Voir la fiche</a>
+							</p>
+						</li>
+					{% else %}
+						Aucune série trouvée.
+					{% endfor %}
+				</ol>
+			</div>
 		</div>
-	{% else %}
-		Aucune catégorie trouvée.
-	{% endfor %}
-	<div class="my-5">
-		<a href="{{ path('app_index') }}">
-			Retour à l'accueil
-		</a>
+	</div>
+
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-9">
+				<p>
+					<a href="{{ path('app_index') }}">
+						Retour à l'accueil
+					</a>
+				</p>
+				<p>
+					<a href="{{ path('program_index') }}">
+						Liste des programmes
+					</a>
+				</p>
+			</div>
+		</div>
 	</div>
 {% endblock %}
