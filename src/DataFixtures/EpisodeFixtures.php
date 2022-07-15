@@ -41,6 +41,7 @@ class EpisodeFixtures extends Fixture implements DependentFixtureInterface
     {
         return [
            ProgramFixtures::class,
+           SeasonFixtures::class,
         ];
     }
 }
