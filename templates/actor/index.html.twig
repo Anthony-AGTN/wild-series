@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wild Series
+{% endblock %}
+
+{% block body %}
+
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-9">
+				<h1>Toutes les séries :</h1>
+				<ol class="list-group">
+					{% for actor in actors %}
+						<li class="list-group-item">
+							<h2 class="mt-4">{{ loop.index }}
+								/
+								{{ actor.name }}
+								
+							{# <p class="text-end">
+								<a href="{{ path("program_show", { id: program.id }) }}">Voir la fiche</a>
+							</p> #}
+						</li>
+					{% else %}
+						Aucune série trouvée.
+					{% endfor %}
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-9">
+				<p>
+					<a href="{{ path('program_new') }}">
+						Ajouter une série
+					</a>
+				</p>
+				<p>
+					<a href="{{ path('app_index') }}">
+						Retour à l'accueil
+					</a>
+				</p>
+				<p>
+					<a href="{{ path('category_index') }}">
+						Liste des catégories
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	
+{% endblock %}
